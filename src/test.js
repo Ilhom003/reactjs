@@ -1,4 +1,4 @@
-function Test(){
+function Test(title){
     console.log('hi');
     console.log('hi');
     console.log('hi');
@@ -8,4 +8,12 @@ function Test(){
     console.log('hi');
     console.log('hi');
     console.log('hi');
+}
+Test()
+
+class Component{
+
+}
+class Student extends Component{
+
 }

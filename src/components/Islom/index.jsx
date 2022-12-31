@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 
-const Islom = () => {
-    return (
-        <div>
-            <h1>Hi from Islom's Component</h1>
-        </div>
-    )
-}
+// const Islom = () => {
+//     return (
+//         <div>
+//             <h1>Hi from Islom's Component</h1>
+//         </div>
+//     )
+// }
 
-export default Islom
+// export default Islom
