@@ -27,6 +27,7 @@ class State extends React.Component {
         const onCheck = (e) => {
             console.log(e.target.checked);
         }
+        
         return (
             <div>
                 <h1>{this.state.title}</h1>
@@ -40,4 +41,4 @@ class State extends React.Component {
     }
 }
 
-export default State;
+export default State; 
