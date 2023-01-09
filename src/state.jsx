@@ -1,44 +1,32 @@
 import React from "react";
+import { Box, Container, Decs, Title } from "./stateStyle";
 
 class State extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            count: 1,
-            title: "Webbrain academy"
-        }
-    }
+
     render() {
-        const plus = () => {
-            if (this.state.count < 10) {
-                this.setState({ count: this.state.count + 1 })
-            }
-        }
-        const minus = () => {
-            if (this.state.count > 1) {
-
-                this.setState({ count: this.state.count - 1 })
-            }
-        }
-
-        const onChange = (event) => {
-            this.setState({ title: event.target.value })
-        }
-        const onCheck = (e) => {
-            console.log(e.target.checked);
-        }
-        
         return (
-            <div>
-                <h1>{this.state.title}</h1>
-                <h1>State {this.state.count}</h1>
-                <button onClick={plus}>+</button>
-                <button onClick={minus}>-</button>
-                <input onChange={onChange} type="text" placeholder="name" />
-                <input onChange={onCheck} type="checkbox" />
-            </div>
+            <Container>
+                <Box bg='blue' type='large'>Large</Box>
+                <Box bg='yellow' type='medium'>Medium</Box>
+                <Box bg='red' type='small'>Small</Box>
+                <Title>Hey Title</Title>
+                <Decs left>Description 1</Decs>
+                <Decs>Description 2</Decs>
+            </Container>
         )
     }
 }
 
-export default State; 
+export default State;
+
+// class State extends React.Component {
+
+//     render() {
+//         return (
+//             <div>
+//                 <h1>Styled Components</h1>
+//             </div>
+//         )
+// }}
+
+// export default State; 
