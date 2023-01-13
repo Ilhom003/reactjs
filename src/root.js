@@ -7,7 +7,7 @@ class Root extends Component {
         return (
             <div  style={{ display: 'flex' }}>
                 <Class />
-                <Hooks />
+                {/* <Hooks /> */}
             </div>
         );
     }
