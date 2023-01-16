@@ -7,9 +7,9 @@ class Root extends Component {
     render() {
         return (
             <div  style={{ display: 'flex' }}>
-                <UseState/>
+                {/* <UseState/> */}
                 {/* <Class /> */}
-                {/* <Hooks /> */}
+                <Hooks />
             </div>
         );
     }
