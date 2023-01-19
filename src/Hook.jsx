@@ -3,7 +3,7 @@ import React, { useState, useReducer } from "react";
 const Hooks = (props) => {
     const [count, setCount] = useState(0);
     const [name, setName] = useState('webbrain');
-    const [option,setOption]= useState(1)
+    const [option, setOption] = useState(1)
 
     const reducer = (state, action) => {
         console.log(state, action);
@@ -20,11 +20,11 @@ const Hooks = (props) => {
     }
 
     const [counter, dispatch] = useReducer(reducer, 0)
-    const onSelect =(e)=>{
+    const onSelect = (e) => {
         setOption(Number(e.target.value))
     }
-    
-  
+
+
     return (
         <div style={{ flex: 1 }}>
             <h1>Hooks Component</h1>
@@ -32,7 +32,7 @@ const Hooks = (props) => {
             <h1>Counter: {counter}</h1>
             <button onClick={() => dispatch({ type: 'plus' })}>+</button>
             <button onClick={() => dispatch({ type: 'minus' })}>-</button>
-            <select defaultValue={1}  onChange={onSelect} name="" id="">
+            <select defaultValue={1} onChange={onSelect} name="" id="">
                 <option value={1}>1</option>
                 <option value={2}>2</option>
                 <option value={3}>3</option>
@@ -48,4 +48,4 @@ const Hooks = (props) => {
     )
 }
 
-export default Hooks; 
+export default Hooks;   
