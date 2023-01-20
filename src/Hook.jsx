@@ -1,49 +1,24 @@
-import React, { useState, useReducer } from "react";
+import React, { useContext } from "react";
+import { StudentContext } from "./context";
 
-const Hooks = (props) => {
-    const [count, setCount] = useState(0);
-    const [name, setName] = useState('webbrain');
-    const [option, setOption] = useState(1)
+const Hooks = () => {
+    // const [students, setStudents] = useState()
+    const [students,setstudents] = useContext(StudentContext)
 
-    const reducer = (state, action) => {
-        console.log(state, action);
-        switch (action.type) {
-            case 'plus':
-                return state + 1
-            case 'minus':
-                return state - 1
-            case 'byamout':
-                return state + action.payload
-            default:
-                return state
-        }
+    const onDelete = (id)=>{
+        let res = students.filter(st => {
+            return st.id !== id
+        })
+        setstudents(res)
     }
-
-    const [counter, dispatch] = useReducer(reducer, 0)
-    const onSelect = (e) => {
-        setOption(Number(e.target.value))
-    }
-
-
     return (
-        <div style={{ flex: 1 }}>
-            <h1>Hooks Component</h1>
-            <h1>Count: {count}</h1>
-            <h1>Counter: {counter}</h1>
-            <button onClick={() => dispatch({ type: 'plus' })}>+</button>
-            <button onClick={() => dispatch({ type: 'minus' })}>-</button>
-            <select defaultValue={1} onChange={onSelect} name="" id="">
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={4}>4</option>
-                <option value={5}>5</option>
-            </select>
-            <button onClick={() => dispatch({ type: 'byamout', payload: option })}>{option}</button>
-            {/* <button onClick={() => dispatch({ type: 'byamout', payload: 50 })}>50</button> */}
-            <input onChange={(e) => setName(e.target.value)} type="text" value={name} />
-            <button onClick={() => setCount(count - 1)}>-</button>
-            <button onClick={() => setCount(count + 1)}>+</button>
+        <div style={{ background: 'coral' }}>
+            <h1>Student List {students.length}</h1>
+            {students.map(student =>{
+                return(
+                    <h1 key={student.id}>Name: {student.name} <button onClick={()=> onDelete(student.id)}>delete</button></h1>
+                )
+            })}
         </div>
     )
 }
